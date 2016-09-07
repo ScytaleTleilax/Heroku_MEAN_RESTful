@@ -1,4 +1,4 @@
-###Heroku_MEAN_RESTful
+###MEAN_RESTful
 
 Learning how to develop a RESTful Web App using MEAN stack and deploy it to Heroku Cloud Platform
 
