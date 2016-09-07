@@ -36,30 +36,15 @@ function handleError(res,reason,message,code){
     res.status(code || 500).json({"error":message,"reason":reason});
 }
 
-//find all contacts
-app.get("/contacts",function(req,res){
+//http://stackoverflow.com/questions/28305120/differences-between-express-router-and-app-get
+app.use('/contacts',require('./routes/contacts'));
+app.use('/contacts/:id',require('./routes/contactsID'));
 
-});
 
-//Create a new contact
-app.post("/contacts",function(req,res){
 
-});
 
-//find a single contact by ID
-app.get("/contacts/:id",function(req,res){
 
-});
 
-//Update entire contact document
-app.put("/contacts/:id",function(req,res){
-
-});
-
-//Delete a contact by ID
-app.delete("/contacts/:id",function(req,res){
-
-});
 
 
 
