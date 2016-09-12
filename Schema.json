@@ -1,0 +1,15 @@
+{
+	"_id"           : "<ObjectId>",
+	"firstName"     : "<string>",
+	"lastName"      : "<string>",
+	"email"         : "<string>",
+	"phoneNumbers"  : {
+		"mobile" : "<string>",
+		"work"   : "<string>"
+	},
+	"twitterHandle" : "<string>",
+	"addresses"     : {
+		"home" : "<string>",
+		"work" : "<string>"
+	}
+}

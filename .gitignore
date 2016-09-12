@@ -1,5 +1,5 @@
 .gitignore
 .idea/
-2
 node_modules/*
 db/*
+.env
