@@ -5,9 +5,9 @@ var express = require('express')
 	, ObjectID = mongodb.ObjectID
 	, app = express();
 var dotenv = require('dotenv');
-
-
 dotenv.load();
+
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,7 +18,6 @@ app.use('/contacts', require('./routes/contactsRouter'));
 //Seting DB_URI from .env file
 app.locals.MONGODB_URI = process.env.MONGODB_URI;
 
-
 mongodb.MongoClient.connect(
 	app.locals.MONGODB_URI, function (err, database) {
 		if (err) {
@@ -26,7 +25,7 @@ mongodb.MongoClient.connect(
 			process.exit(1);
 		}
 		// Save database object from the callback for reuse.
-
+		
 		//app.locals.db = database;
 		exports.db = database;
 		console.log("Database connection ready");

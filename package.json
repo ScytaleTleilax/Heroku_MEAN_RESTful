@@ -4,7 +4,8 @@
   "description": "https://devcenter.heroku.com/articles/mean-apps-restful-api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"Main.js"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -12,7 +13,7 @@
     "express": "^4.13.3",
     "mongodb": "^2.1.6"
   },
-  "engine": "node 4.5.0",
+  "engine": "node 6.5.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ScytaleTleilax/MEAN_RESTful.git"

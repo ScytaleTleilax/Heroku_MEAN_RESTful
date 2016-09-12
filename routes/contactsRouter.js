@@ -2,7 +2,6 @@ var express = require("express");
 var router = express.Router();
 var Server = require('./../Main');
 
-
 /*Http://127.0.0.1:8080/contacts*/
 router.route("/")
       .all(function (req, res, next) {
