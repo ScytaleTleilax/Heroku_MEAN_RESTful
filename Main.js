@@ -11,7 +11,7 @@ exports.ObjectID = ObjectID;
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //http://stackoverflow.com/questions/28305120/differences-between-express-router-and-app-get
 app.use('/contacts', require('./routes/contactsRouter'));
