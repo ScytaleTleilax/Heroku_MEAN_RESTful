@@ -12,3 +12,4 @@ exports.findAll = function(db , collection , res){
 		  res.json(docs);
 	  })
 };
+
