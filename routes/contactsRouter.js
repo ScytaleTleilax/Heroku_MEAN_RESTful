@@ -1,7 +1,8 @@
 var express  = require("express");
 var router   = express.Router();
 var Server   = require('./../Main');
-var MongoFct = require('./../dbFunct/MongoFct');
+var MongoFct = require('./../DbFunct/MongoFct');
+var Err      = require('./../ErrHandle/genericErr');
 
 
 var db;
@@ -21,12 +22,15 @@ router.route("/")
 	      MongoFct.findAll(db , 'contacts' , res)
       })
 
-      .post(function(req , res){
+      .post(function(req , res , next){
 	      var newContact = req.body;
-	      if(! (req.body.firstName || req.body.lastName)){
-		      Server.handleError(res , "Invalid user input" , "Must provide a first or last name." , 400);
+	      if(! (req.body.firstName && req.body.lastName)){
+		      Err.handleError(res , "Invalid user input" , "Must provide a first or last name." , 400);
+		
+		      //pass REQ && RES objects down the Middleware Pipe
+		      return next();
 	      }
-	
+
 	      db.collection("contacts")
 	        .insertOne(newContact , function(err , doc){
 		        if(err){
